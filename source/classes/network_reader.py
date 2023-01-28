@@ -13,12 +13,15 @@ class NetworkReader:
         It reads the file line by line, and for each line, it splits the line into parts, and then adds the parts to the
         social network
         """
+        # Reading the first line of the file and assigning it to the variable `self._num_of_users`
         with open(self._filename, 'r') as f:
             self._num_of_users = f.readline().strip()
             print(f'Total users: {self._num_of_users}')
 
             users = []
 
+            # Reading the file line by line, and for each line, it splits the line into parts, and then adds the
+            # parts to the social network.
             for line in f:
                 parts = line.strip().split()
 
@@ -29,15 +32,18 @@ class NetworkReader:
                         self._social_nw[parts[1]] = []
                     self._social_nw[parts[0]].append(parts[1])
                     self._social_nw[parts[1]].append(parts[0])
+                # Adding the parts to the list `users`.
                 users.extend(parts)
 
+            # Checking if there is any user in the list `users` that is not in the social network. If there is, then
+            # it adds that user to the social network.
             for user in set(users):
                 if user not in self._social_nw:
                     self._social_nw[user] = []
 
     def validate_nw_data(self):
         """
-        It checks if the friend of a friend is also a friend of the original person
+        It checks if the friend of a friend is also a friend of the original person, if not then it raises an exception
         """
         for key, value in self._social_nw.items():
             for friend in value:
@@ -51,7 +57,7 @@ class NetworkReader:
     def display_nw_data(self):
         """
         It takes the dictionary of the social network and returns a string of the social network in the format of:
-        
+
         :return: The result is a string that contains the social network data.
         """
         result = ''
