@@ -38,6 +38,8 @@ class Analyser:
         """
         least_friends = float('inf')
         users_with_least_friends = []
+        # Looping through the data, keeping track of the number of friends each user has, and the user with the least
+        # friends.
         for user, friends in self.data.items():
             num_friends = len(friends)
             if num_friends < least_friends:
@@ -76,10 +78,13 @@ class Analyser:
         :return: A dictionary of users and their indirect friends.
         """
         indirect_friends = {}
+        # Looping through the data, and for each user, it is getting the list of their friends.
         for user, friends in self.data.items():
             if not friends:
                 indirect_friends[user] = ""
             else:
+                # Getting the list of friends for each of the user's friends, and then removing the user's friends and
+                # the user from the list.
                 indirect_friends[user] = set(
                     friend for friend_list in (self.data.get(friend, []) for friend in friends) for friend in
                     friend_list
