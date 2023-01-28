@@ -36,7 +36,7 @@ class FriendHandler:
             mutual_friends = dict(sorted(mutual_friends.items(), key=lambda item: item[1], reverse=True))
             for friend, common_friends in mutual_friends.items():
                 if common_friends > 0:
-                    return f'{Fore.GREEN}The recommended friend for {Fore.RED}{name} {Fore.GREEN} is ' \
+                    return f'{Fore.GREEN}The recommended friend for {Fore.RED}{name} {Fore.GREEN}is ' \
                            f'{Fore.RED}{friend}{Style.RESET_ALL}'
                 else:
                     return f'{Fore.RED}{name} has no friends to recommend.{Style.RESET_ALL}'
