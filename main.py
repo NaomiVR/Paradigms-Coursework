@@ -38,7 +38,7 @@ def main():
             while True:
                 print(Style.RESET_ALL)
                 print('\n')
-                print('Please select an option"')
+                print('Please select an option')
                 print('1. Display the social network')
                 print('2. Get common friend count')
                 print('3. Recommend a friend')
@@ -67,7 +67,7 @@ def main():
                     print(analyser.least_friends())
                 elif choice == 6:
                     clear()
-                    name = input('Enter the name of the user" ')
+                    name = input('Enter the name of the user: ')
                     print(analyser.direct_relationships(name))
                 elif choice == 7:
                     clear()
