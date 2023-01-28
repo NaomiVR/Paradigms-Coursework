@@ -35,8 +35,9 @@ class NetworkReader:
         for key, value in self._social_nw.items():
             for friend in value:
                 if key not in self._social_nw[friend]:
-                    raise FileConsistencyError('Inconsistent network: UserA is friends with UserB, '
-                                               'but UserB is not friends with UserA.')
+                    raise FileConsistencyError(f'File name: {self._filename}, '
+                                               f'Inconsistent network: {key} is friends with {friend}, '
+                                               f'but {friend} is not friends with {key}.')
                 else:
                     print('Network is consistent.')
 
