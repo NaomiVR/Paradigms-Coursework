@@ -23,30 +23,30 @@ def main():
             print(line.strip())
 
     while True:
-        file_name = input("Please enter the file name: ")
+        file_name = input('Please enter the file name: ')
         file_path = os.path.abspath(file_name)
         try:
             network_reader = NetworkReader(file_path)
             network_reader.get_nw_data()
             network_reader.validate_nw_data()
             print(network_reader._social_nw)
-            print("File loaded successfully!")
+            print('File loaded successfully!')
 
             friend_handler = FriendHandler(network_reader._social_nw)
             analyser = Analyser(network_reader._social_nw)
 
             while True:
                 print(Style.RESET_ALL)
-                print("\n")
-                print("Please select an option:")
-                print("1. Display the social network")
-                print("2. Get common friend count")
-                print("3. Recommend a friend")
-                print("4. Display number of friends for a given user")
-                print("5. Show user with least number of friends/ no friends")
-                print("6. Show all relationships of a given user")
-                print("7. Show indirect relationships between users")
-                print("8. Exit")
+                print('\n')
+                print('Please select an option"')
+                print('1. Display the social network')
+                print('2. Get common friend count')
+                print('3. Recommend a friend')
+                print('4. Display number of friends for a given user')
+                print('5. Show user with least number of friends/ no friends')
+                print('6. Show all relationships of a given user')
+                print('7. Show indirect relationships between users')
+                print('8. Exit')
                 choice = int(input('Option: '))
                 if choice == 1:
                     clear()
@@ -56,36 +56,40 @@ def main():
                     print(friend_handler.common_count())
                 elif choice == 3:
                     clear()
-                    name = input("Enter the name of the user: ")
+                    name = input('Enter the name of the user: ')
                     print(friend_handler.recommend(name))
                 elif choice == 4:
                     clear()
-                    name = input("Enter the name of the user: ")
+                    name = input('Enter the name of the user: ')
                     print(analyser.calc_friend_total(name))
                 elif choice == 5:
                     clear()
                     print(analyser.least_friends())
                 elif choice == 6:
                     clear()
-                    name = input("Enter the name of the user: ")
+                    name = input('Enter the name of the user" ')
                     print(analyser.direct_relationships(name))
                 elif choice == 7:
                     clear()
                     print(analyser.indirect_relationships())
                 elif choice == 8:
                     clear()
-                    print("Thank you, goodbye!")
+                    print('Thank you, goodbye!')
                     break
                 else:
                     clear()
-                    print("Invalid option, please try again.")
+                    print('Invalid option, please try again.')
             break
         except FileNotFoundError:
-            print("File not found, please try again.")
-            choice = input("Do you want to try again? (y/n)").strip().lower()
+            print('File not found, please try again.')
+            choice = input('Do you want to try again? (y/n)').strip().lower()
             if choice == 'n':
-                print("Thank you, goodbye!")
+                print('Thank you, goodbye!')
                 break
+            elif choice == 'y':
+                continue
+            else:
+                print('Invalid option, retrying anyway')
 
 
 if __name__ == '__main__':
