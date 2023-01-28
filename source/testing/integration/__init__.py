@@ -101,7 +101,7 @@ class Analyser:
         if friends is not None:
             total_friends = len(friends)
             return f'{Fore.GREEN}{user} has {str(total_friends)} ' \
-                   f'{"friends" if len(friends) > 1 else "friend"}{Style.RESET_ALL}'
+                   f'{"friends" if len(friends) > 1 or len(friends) == 0 else "friend"}{Style.RESET_ALL}'
         else:
             return f'{Fore.RED} User not found{Style.RESET_ALL}'
 
