@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+(main.py) as (main1)
+(main.exe) as (main2)
+(analyser.py) as (analyser)
+(friend_handler.py) as (friend_handler)
+(network_reader.py) as (network_reader)
+(custom_exceptions.py) as (custom_exceptions)
+
+
+User -> (main1)
+User -> (main2)
+
+(main2) -> (main1)
+
+(main1) --> (analyser)
+(main1) --> (friend_handler)
+(main1) --> (network_reader)
+(network_reader) --> (custom_exceptions)
+
+
+@enduml

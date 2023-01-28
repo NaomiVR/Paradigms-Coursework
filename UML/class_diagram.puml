@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Interface {
+
+}
+
+class NetworkReader {
+_filename: str
+_num_of_users: int
+_social_nw: dict
+get_nw_data(self)
+validate_nw_data(self)
+display_nw_data(self) -> str
+}
+
+class FriendHandler {
+friend_data: dict
+common_friends: dict
+common_count(self) -> str
+recommend(self, name) -> str
+}
+
+class Analyser {
+data: dict
+calc_friend_total(self, user) -> str
+least_friends(self) -> str
+direct_relationships(self, user) -> str
+indirect_relationships(self) -> str
+}
+
+class FileConsistencyError {
+Inherits(Exception)
+}
+
+metaclass Colorama {
+
+}
+
+Interface *- NetworkReader
+Interface *-- FriendHandler
+Interface *-- Analyser
+
+NetworkReader o- FileConsistencyError
+
+NetworkReader o- Colorama
+FriendHandler o-- Colorama
+Analyser o-- Colorama
+@enduml
