@@ -7,6 +7,11 @@ class FriendHandler:
         self._common_friends = {}
 
     def common_count(self):
+        """
+        For each pair of friends, find the number of common friends they have and store it in a dictionary
+
+        :return: A string with the name of the person and the number of common friends they have with each other person.
+        """
         common_friends = {}
         for name1, friends1 in self.friend_data.items():
             for name2 in self.friend_data:
@@ -28,6 +33,14 @@ class FriendHandler:
         return result
 
     def recommend(self, name):
+        """
+        It takes a name as an argument, checks if the name is in the network, and if it is, it creates a dictionary of
+        all the friends of the name, and the number of mutual friends they have with the name. It then sorts the
+        dictionary by the number of mutual friends, and returns the friend with the most mutual friends
+
+        :param name: The name of the person you want to recommend a friend for
+        :return: a string with the recommended friend for the given name.
+        """
         if name in self.friend_data:
             mutual_friends = {}
             for friend in self.friend_data:
