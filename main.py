@@ -76,7 +76,7 @@ def main():
                 elif choice == 8:
                     clear()
                     print('Thank you, goodbye!')
-                    break
+                    exit()
                 else:
                     clear()
                     print('Invalid option, please try again.')
