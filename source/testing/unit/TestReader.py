@@ -9,9 +9,11 @@ NetworkReaderT3 = NetworkReader('nw_data3.txt')
 NetworkReaderT4 = NetworkReader('nw_data4.txt')
 NetworkReaderT5 = NetworkReader('nw_data5.txt')
 NetworkReaderT6 = NetworkReader('nw_data6.txt')
+NetworkReaderT7 = NetworkReader(873446)
+NetworkReaderT8 = NetworkReader('krjhet')
 
 # Store instances
-instances = [NetworkReaderT1, NetworkReaderT2, NetworkReaderT3, NetworkReaderT4, NetworkReaderT5, NetworkReaderT6]
+instances = [NetworkReaderT1, NetworkReaderT2, NetworkReaderT3, NetworkReaderT4, NetworkReaderT5, NetworkReaderT6, NetworkReaderT7, NetworkReaderT8]
 
 # iterate through and test instances
 for instance in instances:
