@@ -27,7 +27,8 @@ def main():
         file_path = os.path.abspath(file_name)
         try:
             network_reader = NetworkReader(file_path)
-            network_reader.get_nw_data()
+            if network_reader.get_nw_data() is False:
+                main()
             network_reader.validate_nw_data()
             print(network_reader._social_nw)
             print('File loaded successfully!')
