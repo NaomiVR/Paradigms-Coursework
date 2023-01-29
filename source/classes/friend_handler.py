@@ -13,16 +13,16 @@ class FriendHandler:
         :return: A string with the name of the person and the number of common friends they have with each other person.
         """
         common_friends = {}
-        # Checking if there are any common friends between two people, and if there are, it adds the 
-        # number of common friends to the dictionary. If there are no common friends, it adds 0 to the 
+        # Checking if there are any common friends between two people, and if there are, it adds the
+        # number of common friends to the dictionary. If there are no common friends, it adds 0 to the
         # dictionary.
         for name1, friends1 in self.friend_data.items():
             for name2 in self.friend_data:
                 if name1 != name2:
                     common = set(friends1).intersection(self.friend_data[name2])
-                    # Checking if there are any common friends between two people, and if there are, it adds the 
-                    # number of common friends to the dictionary. If there are no common friends, it adds 0 to the 
-                    # dictionary. 
+                    # Checking if there are any common friends between two people, and if there are, it adds the
+                    # number of common friends to the dictionary. If there are no common friends, it adds 0 to the
+                    # dictionary.
                     if common:
                         count = len(common)
                         self._common_friends[(name1, name2)] = (count, common)
@@ -34,7 +34,7 @@ class FriendHandler:
 
         result = ''
         for name, counts in common_friends.items():
-            result += f'{Fore.GREEN}{name} -> {counts}{Style.RESET_ALL}\n'
+            result += f'{Fore.GREEN}{name} -> {Fore.RED}{counts}{Style.RESET_ALL}\n'
 
         return result
 
