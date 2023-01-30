@@ -7,10 +7,10 @@
 |      outside of one you may spot an illegal  |
 |      character, like the following          |
 |                                              |
-|      Other things to note, this is a         |
+|      Other things to note, this is not a     |
 |      case-sensitive application and so       |
 |      incorrect spelling will yield           |
-|      incorrect results                       |
+|      still correct results                   |
 |                                              |
 |      This application was made by:           |
 |      Luke Nathan Barnes                      |
