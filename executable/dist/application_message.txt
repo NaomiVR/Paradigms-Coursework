@@ -1,0 +1,20 @@
+------------------------------------------------
+|             Application details              |
+|                                              |
+|      This is a mini non-gui application      |
+|      that is designed to be run on a         |
+|      command line interface, if it is run    |
+|      outside of one you may spot an illegal  |
+|      character, like the following          |
+|                                              |
+|      Other things to note, this is not a     |
+|      case-sensitive application and so       |
+|      incorrect spelling will yield           |
+|      still correct results                   |
+|                                              |
+|      This application was made by:           |
+|      Luke Nathan Barnes                      |
+|      Year 1 Computer Science (Games)         |
+|      Finished making: 26/01/2023             |
+|      Version: 0.59                           |
+------------------------------------------------
